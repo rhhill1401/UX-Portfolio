@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'bigText';
+  src: url(/Fonts/TestFoundersGrotesk-Semibold.otf) format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'mediumText';
+  src: url(/Fonts/TestCalibre-Medium.otf) format('opentype');
+  font-weight: medium;
+}
+
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+
+#page {
+  max-width: 1910px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container {
+  height: 100vh;
+}
+.black-container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  padding: 0px 25px;
+  box-sizing: inherit;
+  padding-bottom: 10px;
+  border-radius: 0px 0px 0px 6px;
+  height: 37vw;
+
+  /* overflow-y: none; */
+}
+
+.overlay {
+  background-color: #ffb6c1;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  align-items: center;
+  padding: 0px 25px;
+  box-sizing: inherit;
+  padding-bottom: 10px;
+  border-radius: 0px 0px 0px 6px;
+  height: 37vw;
+  position: absolute;
+  top: 30px;
+  width: 1910px;
+
+  clip-path: circle(100px at var(--x, 100%) var(--y, 00%));
+  transition-timing-function: cubic-bezier(1, -0.01, 0.01, 0.99);
+}
+
+span {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  cursor: pointer;
+}
+
+svg {
+  margin: 1em;
+  fill: white;
+}
+
+.is-open {
+  clip-path: circle(110% at 100% 100%);
+  transition: clip-path 1.3s;
+}
+
+#content {
+  margin-top: 30px;
+  width: 100%;
+  /* height: 2152px; */
+}
+
+.third-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+}
+
+.cards-container {
+  max-width: 1228px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'a b c';
+  grid-gap: 0px 20px;
+  justify-items: center;
+}
+
+.card-1 {
+  grid-area: a;
+  background-color: black;
+  height: 604px;
+  width: 395px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.card-1 img {
+  height: 300px;
+}
+.card-2 {
+  display: flex;
+  grid-area: b;
+  height: 604px;
+  width: 395px;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-2 img {
+  height: 149px;
+}
+.card-3 {
+  grid-area: c;
+
+  background-color: white;
+  border: 6px solid black;
+  height: 604px;
+  width: 395px;
+  border-radius: 9px;
+  margin-top: 50px;
+}
+.first-container {
+  display: grid;
+  height: 37vw;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 7fr 1.5fr;
+  width: 100%;
+
+  grid-template-areas:
+    'a a a'
+    'd e f';
+}
+
+.row-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+  justify-content: flex-end;
+  align-items: center;
+  grid-area: a;
+}
+
+.second-img {
+  margin-top: -35px;
+  margin-right: 15px;
+}
+.second-img-y {
+  margin-top: -35px;
+  margin-right: 15px;
+  display: none;
+}
+
+.row-2 {
+  height: 100px;
+  border-right: 1px solid white;
+  justify-self: center;
+  grid-area: e;
+}
+
+.row-2-y {
+  height: 100px;
+  border-right: 2px solid black;
+  justify-self: center;
+  grid-area: e;
+}
+
+.row-3 {
+  height: 100px;
+  font-family: mediumText;
+  font-size: 1em;
+  grid-area: f;
+  color: white;
+  display: flex;
+  justify-self: flex-end;
+  align-items: flex-end;
+}
+
+.row-4 {
+  height: 100px;
+  font-family: mediumText;
+  font-size: 1em;
+  grid-area: f;
+  color: black;
+  display: flex;
+  justify-self: flex-end;
+  align-items: flex-end;
+}
+
+blockquote::before {
+  content: open-quote;
+  font-size: 1em;
+  color: black;
+  font-size: 1.5em;
+}
+blockquote::after {
+  content: close-quote;
+  font-size: 1em;
+  color: black;
+  font-size: 1.5em;
+}
+
+.second-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  width: 100%;
+  height: 10vh;
+}
+
+.title-container {
+  width: 100%;
+  text-align: center;
+}
+.title-container h1 {
+  font-size: 60px;
+  font-family: bigText, serif;
+  line-height: 64px;
+  font-weight: bold;
+}
+
+.title-container p {
+  font-size: 18px;
+  font-family: mediumText, serif;
+  letter-spacing: 0.06em;
+  line-height: 19px;
+  font-weight: medium;
+}
+
+.drip {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -32px;
+  margin-top: -4px;
+}
+
+.drip img {
+  width: 91.79px;
+  height: 42.58px;
+}
